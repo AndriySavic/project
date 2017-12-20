@@ -1,0 +1,14 @@
+
+<%= form_for :item, url:item_path, method: :patch do |f| %>
+<% if @item.errors.any? %>
+<% @item.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+<% end %>
+
+<%= render 'items/form', f:f %>
+
+<% end %>
+<% form_for @item, url:item_path do |f|%>
+<%=render 'items/form', f:f %>
+<%end%>

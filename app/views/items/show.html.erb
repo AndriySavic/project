@@ -1,0 +1,20 @@
+<center><h1><%= @item.name%></h1>
+<p><%= @item.description%></p>
+
+<% @comments.each do |comment| %>
+<%= comment.text %> 
+<hr>
+<% end %>
+<%= form_for :itemcomment, url: item_itemcomments_path(item_id: @item.id) do |f| %>
+<% if flash[:notice] %>
+        <%= flash[:notice]%>
+<% end %>
+
+<p><%= f.label "Введите комментарий" %></p>
+<p><%= f.text_area :text, cols: 20, rows: 5 %></p><br/>
+
+<p><%= f.submit "Отправить"%></p></br>
+
+<%end%>
+</center>
+

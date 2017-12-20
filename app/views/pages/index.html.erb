@@ -1,0 +1,49 @@
+<style>
+.con a{
+  text-decoration:none;
+ }
+</style>
+
+
+<div class="con">
+<div class="container">
+<div class="row">
+<center><%= link_to "Добавить новое объявление", new_item_path, class: "btn btn-primary active btn-block btn-lg" %></center>
+
+<% @items.each do |item| %></center></br>
+  
+    <div class="thumbnail">
+      
+       <center> </br><p><%= image_tag(item.image.url, width: 300, height: 300)%></p>
+
+  <h1><%= link_to item.name, item_path(item.id) %></h1>
+
+  
+  <%= image_tag item.user.avatar.url(:thumb), width: 30, height: 30 %>
+
+  <p><span style="color: green;">Автор:<%= item.user.nickname %></span>
+
+
+  <span style="color: grey;">| Опубликовано: <%= item.created_at %></span></p>
+
+  <% if current_user != nil and current_user.id == item.user_id %>
+
+    <p><span style="color: #38678b;">
+
+  <%= link_to "Редактировать",  edit_item_path(item.id), class: "btn btn-primary active" %>
+
+  <%= link_to "Удалить", item_path(item.id), class: "btn btn-primary active", data: {confirm: 'Are you sure?'}, method: :delete %>
+ </span></p>
+       </center>
+      >
+   
+  <%end%>
+</div>
+
+<%end%> 
+
+</div>
+    </div>
+     </div
+ 
+ 
