@@ -5,9 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
          has_many :titles
          has_many :itemcomments
+      
 
-
-         has_attached_file :avatar, styles: { medium: "300x300>", small: "50x50>" }, default_url: "/images/thumb/default.png"
+         has_attached_file :avatar, styles: { medium: "300x300>", small: "50x50>" }, default_url: "/images/default.png"
          validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
          validates :nickname, :password, :email, presence: true 

@@ -2,8 +2,13 @@
 .con a{
   text-decoration:none;
  }
+
+ .aaa {
+  padding: 0 170px;
+ }
 </style>
 
+<div class="aaa">
 
 <div class="con">
 <div class="container">
@@ -13,15 +18,14 @@
 <% @items.each do |item| %></center></br>
   
     <div class="thumbnail">
+    <center><h1><%= link_to item.name, item_path(item.id) %></h1>
       
-       <center> </br><p><%= image_tag(item.image.url, width: 300, height: 300)%></p>
-
-  <h1><%= link_to item.name, item_path(item.id) %></h1>
+        </br><p><%= image_tag(item.image.url, width: 300, height: 300)%></p> 
 
   
-  <%= image_tag item.user.avatar.url(:thumb), width: 30, height: 30 %>
+  <p><%= image_tag item.user.avatar.url(:thumb), width: 30, height: 30 %>
 
-  <p><span style="color: green;">Автор:<%= item.user.nickname %></span>
+  <span style="color: green;">Автор:<%= item.user.nickname %></span>
 
 
   <span style="color: grey;">| Опубликовано: <%= item.created_at %></span></p>
@@ -44,6 +48,8 @@
 
 </div>
     </div>
-     </div
+    </div>
+    </div>
+     
  
  
