@@ -8,7 +8,8 @@ class ItemsController < ApplicationController
 
 	  def create
 	  	pp params[:item][:user_id]=current_user.id
-	  	params[:item][:image]
+	  	pp params[:item][:category_id] = params[:category_id]
+	  	pp params[:item][:image]
 	  	pp @item=Item.create(item_params)
 	  	if @item.save
 	  		redirect_to root_path
