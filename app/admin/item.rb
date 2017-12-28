@@ -12,7 +12,7 @@ ActiveAdmin.register Item do
 #   permitted
 # end
 
-permit_params :description, :name, :user_id
+permit_params :description, :name, :user_id, :category_id
 
 
 end

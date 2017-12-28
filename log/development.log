@@ -26050,3 +26050,631 @@ Processing by ItemsController#new as HTML
 Completed 200 OK in 510ms (Views: 492.1ms | ActiveRecord: 2.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-12-28 10:18:02 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered pages/index.html.erb within layouts/application (147.8ms)
+  Rendered layouts/_navbar.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (5.3ms)
+Completed 200 OK in 1549ms (Views: 1519.8ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-12-28 10:22:42 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/page/index.html.arb
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/page/index.html.arb (425.5ms)
+Completed 200 OK in 535ms (Views: 447.7ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/admin/items" for 127.0.0.1 at 2017-12-28 10:22:47 +0200
+Processing by Admin::ItemsController#index as HTML
+  [1m[36mAdminUser Load (5.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mItemcomment Load (0.5ms)[0m  [1m[34mSELECT "itemcomments".* FROM "itemcomments"[0m
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb (810.7ms)
+Completed 200 OK in 846ms (Views: 815.8ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2017-12-28 10:22:52 +0200
+Processing by Admin::CategoriesController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "categories" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "categories" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "categories" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb (416.7ms)
+Completed 200 OK in 448ms (Views: 426.4ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-28 10:27:24 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered pages/index.html.erb within layouts/application (244.1ms)
+Completed 500 Internal Server Error in 282ms (ActiveRecord: 5.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    26:   <p><%= image_tag(item.user.avatar.url, width: 30, height: 30) %>
+    27: 
+    28:   <span style="color: green;">Автор:<%= item.user.nickname %></span>
+    29:   <span style="color: green;">Categ:<%= item.category.name %></span>
+    30: 
+    31:   <span style="color: grey;">| Опубликовано: <%= item.created_at %></span></p>
+    32: 
+  
+app/views/pages/index.html.erb:29:in `block in _app_views_pages_index_html_erb___3372770387320484442_36470440'
+app/views/pages/index.html.erb:18:in `_app_views_pages_index_html_erb___3372770387320484442_36470440'
+Started GET "/" for 127.0.0.1 at 2017-12-28 10:27:51 +0200
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered pages/index.html.erb within layouts/application (40.8ms)
+  Rendered layouts/_navbar.html.erb (2.8ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 1670ms (Views: 1663.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-28 10:28:26 +0200
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered pages/index.html.erb within layouts/application (56.2ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    26:   <p><%= image_tag(item.user.avatar.url, width: 30, height: 30) %>
+    27: 
+    28:   <span style="color: green;">Автор:<%= item.user.nickname %></span>
+    29:   <span style="color: green;">Categ:<%= item.category.id %></span>
+    30: 
+    31:   <span style="color: grey;">| Опубликовано: <%= item.created_at %></span></p>
+    32: 
+  
+app/views/pages/index.html.erb:29:in `block in _app_views_pages_index_html_erb___3372770387320484442_69995754937720'
+app/views/pages/index.html.erb:18:in `_app_views_pages_index_html_erb___3372770387320484442_69995754937720'
+Started GET "/admin/items" for 127.0.0.1 at 2017-12-28 10:28:45 +0200
+Processing by Admin::ItemsController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+  [1m[35mCACHE  (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/admin/items" for 127.0.0.1 at 2017-12-28 10:28:46 +0200
+Processing by Admin::ItemsController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb
+  [1m[36mItemcomment Load (0.4ms)[0m  [1m[34mSELECT "itemcomments".* FROM "itemcomments"[0m
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb (801.6ms)
+Completed 200 OK in 893ms (Views: 815.4ms | ActiveRecord: 11.4ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mItemcomment Load (0.4ms)[0m  [1m[34mSELECT "itemcomments".* FROM "itemcomments"[0m
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb (774.9ms)
+Completed 200 OK in 889ms (Views: 851.2ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-28 10:31:52 +0200
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered pages/index.html.erb within layouts/application (38.7ms)
+  Rendered layouts/_navbar.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 480ms (Views: 475.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin/items/6/edit" for 127.0.0.1 at 2017-12-28 10:33:27 +0200
+Processing by Admin::ItemsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Item Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb (503.4ms)
+Completed 200 OK in 624ms (Views: 602.9ms | ActiveRecord: 3.5ms)
+
+
+Started PATCH "/admin/items/6" for 127.0.0.1 at 2017-12-28 10:33:38 +0200
+Processing by Admin::ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fp2yvlKy1rFoJRs8rVJTDBvkJ0VjCTXnsWORtx5TbOQhTVCf0J9YCbti+N/3i3lQenZydhMEpBEG2nbJ86qJrA==", "item"=>{"user_id"=>"4", "category_id"=>"1", "name"=>"Клавиатура", "description"=>"Продаю клавиатуру тут має бути опис!!!!", "image_file_name"=>"roccat_ryos_top.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>"53393", "image_updated_at(1i)"=>"2017", "image_updated_at(2i)"=>"12", "image_updated_at(3i)"=>"21", "image_updated_at(4i)"=>"10", "image_updated_at(5i)"=>"13"}, "commit"=>"Update Item", "id"=>"6"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Unpermitted parameters: :category_id, :image_file_name, :image_content_type, :image_file_size, :image_updated_at(1i), :image_updated_at(2i), :image_updated_at(3i), :image_updated_at(4i), :image_updated_at(5i)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb (507.2ms)
+Completed 200 OK in 577ms (Views: 513.2ms | ActiveRecord: 3.2ms)
+
+
+Started PATCH "/admin/items/6" for 127.0.0.1 at 2017-12-28 10:33:53 +0200
+Processing by Admin::ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XpVGLZvQtSHbVG8ddOWmBJ/GL/QaJAtayMCrq+oZTAEBRaQMGf07mQgTjP4uPIxY/lR6x2opmqx/eUzVB+CpSQ==", "item"=>{"user_id"=>"4", "category_id"=>"1", "name"=>"Клавиатура", "description"=>"Продаю клавиатуру тут має бути опис!!!!", "image_file_name"=>"roccat_ryos_top.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>"53393", "image_updated_at(1i)"=>"2017", "image_updated_at(2i)"=>"12", "image_updated_at(3i)"=>"21", "image_updated_at(4i)"=>"10", "image_updated_at(5i)"=>"13"}, "commit"=>"Update Item", "id"=>"6"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Unpermitted parameters: :category_id, :image_file_name, :image_content_type, :image_file_size, :image_updated_at(1i), :image_updated_at(2i), :image_updated_at(3i), :image_updated_at(4i), :image_updated_at(5i)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb (435.2ms)
+Completed 200 OK in 486ms (Views: 439.7ms | ActiveRecord: 4.2ms)
+
+
+Started PATCH "/admin/items/6" for 127.0.0.1 at 2017-12-28 10:35:12 +0200
+Processing by Admin::ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+jSmmoruw0kEgSiwsjDnidY3vybEQDi7MVAxY9glJQ+l5ES7CMNN8dfGy1Po6c3Vt6XqFbRNqU2G6dYdNdzARw==", "item"=>{"user_id"=>"4", "category_id"=>"1", "name"=>"Клавиатура", "description"=>"Продаю клавиатуру тут має бути опис!!!!", "image_file_name"=>"roccat_ryos_top.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>"53393", "image_updated_at(1i)"=>"2017", "image_updated_at(2i)"=>"12", "image_updated_at(3i)"=>"21", "image_updated_at(4i)"=>"10", "image_updated_at(5i)"=>"13"}, "commit"=>"Update Item", "id"=>"6"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Unpermitted parameters: :category_id, :image_file_name, :image_content_type, :image_file_size, :image_updated_at(1i), :image_updated_at(2i), :image_updated_at(3i), :image_updated_at(4i), :image_updated_at(5i)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb (480.2ms)
+Completed 200 OK in 581ms (Views: 495.9ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/admin/items/6" for 127.0.0.1 at 2017-12-28 10:35:53 +0200
+Processing by Admin::ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2nm10QHjpj+o50k3WKqrRRKPyO3AZE3U0gaZ6vKMSyOFqVfwg84oh3ugqtQCc4EZcx2d3rBp3CJlv36UH3Wuaw==", "item"=>{"user_id"=>"4", "category_id"=>"1", "name"=>"Клавиатура", "description"=>"Продаю клавиатуру тут має бути опис!!!!", "image_file_name"=>"roccat_ryos_top.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>"53393", "image_updated_at(1i)"=>"2017", "image_updated_at(2i)"=>"12", "image_updated_at(3i)"=>"21", "image_updated_at(4i)"=>"10", "image_updated_at(5i)"=>"13"}, "commit"=>"Update Item", "id"=>"6"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Unpermitted parameters: :image_file_name, :image_content_type, :image_file_size, :image_updated_at(1i), :image_updated_at(2i), :image_updated_at(3i), :image_updated_at(4i), :image_updated_at(5i)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.1ms)[0m  [1m[33mUPDATE "items" SET "category_id" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["category_id", 1], ["updated_at", "2017-12-28 08:35:54.446139"], ["id", 6]]
+  [1m[35m (121.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin/items/6
+Completed 302 Found in 377ms (ActiveRecord: 140.8ms)
+
+
+Started GET "/admin/items/6" for 127.0.0.1 at 2017-12-28 10:35:54 +0200
+Processing by Admin::ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/show.html.arb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = 6 AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Item"], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = 6 AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Item"], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = 6 AND "active_admin_comments"."namespace" = ? ORDER BY created_at ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["resource_type", "Item"], ["namespace", "admin"], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/show.html.arb (608.4ms)
+Completed 200 OK in 645ms (Views: 628.9ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/admin/items" for 127.0.0.1 at 2017-12-28 10:36:00 +0200
+Processing by Admin::ItemsController#index as HTML
+  [1m[36mAdminUser Load (2.9ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mItemcomment Load (0.4ms)[0m  [1m[34mSELECT "itemcomments".* FROM "itemcomments"[0m
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb (607.3ms)
+Completed 200 OK in 639ms (Views: 611.5ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/admin/items/5/edit" for 127.0.0.1 at 2017-12-28 10:36:09 +0200
+Processing by Admin::ItemsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Item Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb (482.1ms)
+Completed 200 OK in 512ms (Views: 494.1ms | ActiveRecord: 2.7ms)
+
+
+Started PATCH "/admin/items/5" for 127.0.0.1 at 2017-12-28 10:36:18 +0200
+Processing by Admin::ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KBFA41Z7iFr8BIdB9qk4ODJiGKAG/6jgJAxoSlzOimR3waLC1FYG4i9DZKKscBJkU/BNk3byORaTtY80sTdvLA==", "item"=>{"user_id"=>"4", "category_id"=>"1", "name"=>"iPhone X", "description"=>"Продаю телефон iphone X", "image_file_name"=>"6b0e71b7a45a7809d9037c5b337415c2554385ca_2-600x600.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>"27418", "image_updated_at(1i)"=>"2017", "image_updated_at(2i)"=>"12", "image_updated_at(3i)"=>"21", "image_updated_at(4i)"=>"10", "image_updated_at(5i)"=>"12"}, "commit"=>"Update Item", "id"=>"5"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Unpermitted parameters: :image_file_name, :image_content_type, :image_file_size, :image_updated_at(1i), :image_updated_at(2i), :image_updated_at(3i), :image_updated_at(4i), :image_updated_at(5i)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.4ms)[0m  [1m[33mUPDATE "items" SET "category_id" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["category_id", 1], ["updated_at", "2017-12-28 08:36:18.697518"], ["id", 5]]
+  [1m[35m (168.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin/items/5
+Completed 302 Found in 215ms (ActiveRecord: 172.5ms)
+
+
+Started GET "/admin/items/5" for 127.0.0.1 at 2017-12-28 10:36:18 +0200
+Processing by Admin::ItemsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/show.html.arb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = 5 AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Item"], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = 5 AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Item"], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = 5 AND "active_admin_comments"."namespace" = ? ORDER BY created_at ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["resource_type", "Item"], ["namespace", "admin"], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/show.html.arb (491.7ms)
+Completed 200 OK in 508ms (Views: 496.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/admin/items" for 127.0.0.1 at 2017-12-28 10:36:24 +0200
+Processing by Admin::ItemsController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mItemcomment Load (0.4ms)[0m  [1m[34mSELECT "itemcomments".* FROM "itemcomments"[0m
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb (522.8ms)
+Completed 200 OK in 540ms (Views: 524.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/admin/items/4/edit" for 127.0.0.1 at 2017-12-28 10:36:31 +0200
+Processing by Admin::ItemsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (4.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Item Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb (644.3ms)
+Completed 200 OK in 667ms (Views: 649.4ms | ActiveRecord: 6.5ms)
+
+
+Started PATCH "/admin/items/4" for 127.0.0.1 at 2017-12-28 10:36:40 +0200
+Processing by Admin::ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"572eoty1xR4sqJKWSwJbgRoUodzJuoLeBC5xUY6eblq4bXyDXphLpv/vcXUR23Hde4b077m3Eyizl5YvY2eLEg==", "item"=>{"user_id"=>"3", "category_id"=>"1", "name"=>"Ноутбук", "description"=>"Тут опис товару!!!", "image_file_name"=>"82_1500x_1500537727.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>"150133", "image_updated_at(1i)"=>"2017", "image_updated_at(2i)"=>"12", "image_updated_at(3i)"=>"21", "image_updated_at(4i)"=>"10", "image_updated_at(5i)"=>"10"}, "commit"=>"Update Item", "id"=>"4"}
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Unpermitted parameters: :image_file_name, :image_content_type, :image_file_size, :image_updated_at(1i), :image_updated_at(2i), :image_updated_at(3i), :image_updated_at(4i), :image_updated_at(5i)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[33mUPDATE "items" SET "category_id" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["category_id", 1], ["updated_at", "2017-12-28 08:36:40.682617"], ["id", 4]]
+  [1m[35m (82.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin/items/4
+Completed 302 Found in 134ms (ActiveRecord: 86.6ms)
+
+
+Started GET "/admin/items/4" for 127.0.0.1 at 2017-12-28 10:36:40 +0200
+Processing by Admin::ItemsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/show.html.arb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = 4 AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Item"], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = 4 AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Item"], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = 4 AND "active_admin_comments"."namespace" = ? ORDER BY created_at ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["resource_type", "Item"], ["namespace", "admin"], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/show.html.arb (418.5ms)
+Completed 200 OK in 433ms (Views: 423.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/admin/items" for 127.0.0.1 at 2017-12-28 10:36:51 +0200
+Processing by Admin::ItemsController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mItemcomment Load (0.4ms)[0m  [1m[34mSELECT "itemcomments".* FROM "itemcomments"[0m
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb (674.6ms)
+Completed 200 OK in 702ms (Views: 683.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/admin/items/3/edit" for 127.0.0.1 at 2017-12-28 10:37:06 +0200
+Processing by Admin::ItemsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (1.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Item Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb (446.2ms)
+Completed 200 OK in 474ms (Views: 453.4ms | ActiveRecord: 6.9ms)
+
+
+Started PATCH "/admin/items/3" for 127.0.0.1 at 2017-12-28 10:37:13 +0200
+Processing by Admin::ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aEU7fmmZeXouys7iuy/+5hxwxqxyntt2Z6dwGwQCOMg3ldlf67T3wv2NLQHh9tS6feKTnwKTSoDQHpdl6fvdgA==", "item"=>{"user_id"=>"3", "category_id"=>"1", "name"=>"Ялинка", "description"=>"Тут має бути опис товару!!!", "image_file_name"=>"sniganna-a.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>"31329", "image_updated_at(1i)"=>"2017", "image_updated_at(2i)"=>"12", "image_updated_at(3i)"=>"21", "image_updated_at(4i)"=>"10", "image_updated_at(5i)"=>"10"}, "commit"=>"Update Item", "id"=>"3"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameters: :image_file_name, :image_content_type, :image_file_size, :image_updated_at(1i), :image_updated_at(2i), :image_updated_at(3i), :image_updated_at(4i), :image_updated_at(5i)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "items" SET "category_id" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["category_id", 1], ["updated_at", "2017-12-28 08:37:13.238856"], ["id", 3]]
+  [1m[35m (170.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin/items/3
+Completed 302 Found in 251ms (ActiveRecord: 174.1ms)
+
+
+Started GET "/admin/items/3" for 127.0.0.1 at 2017-12-28 10:37:13 +0200
+Processing by Admin::ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (3.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/show.html.arb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = 3 AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Item"], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = 3 AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Item"], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = 3 AND "active_admin_comments"."namespace" = ? ORDER BY created_at ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["resource_type", "Item"], ["namespace", "admin"], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/show.html.arb (506.8ms)
+Completed 200 OK in 529ms (Views: 510.9ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/admin/items" for 127.0.0.1 at 2017-12-28 10:37:22 +0200
+Processing by Admin::ItemsController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mItemcomment Load (0.5ms)[0m  [1m[34mSELECT "itemcomments".* FROM "itemcomments"[0m
+  Rendered /home/tehza/.rvm/gems/ruby-2.4.2@rails5.1.4/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb (599.2ms)
+Completed 200 OK in 619ms (Views: 601.1ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-28 10:37:43 +0200
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered pages/index.html.erb within layouts/application (79.1ms)
+  Rendered layouts/_navbar.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (2.3ms)
+Completed 200 OK in 708ms (Views: 700.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-28 10:40:05 +0200
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pages/index.html.erb within layouts/application (156.1ms)
+  Rendered layouts/_navbar.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 750ms (Views: 730.1ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-28 10:42:21 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pages/index.html.erb within layouts/application (201.3ms)
+  Rendered layouts/_navbar.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 1609ms (Views: 1578.4ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-28 10:43:07 +0200
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pages/index.html.erb within layouts/application (69.0ms)
+  Rendered layouts/_navbar.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 489ms (Views: 481.9ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-28 10:44:15 +0200
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pages/index.html.erb within layouts/application (48.5ms)
+  Rendered layouts/_navbar.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 470ms (Views: 463.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/items/3" for 127.0.0.1 at 2017-12-28 10:45:20 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mItemcomment Load (0.7ms)[0m  [1m[34mSELECT "itemcomments".* FROM "itemcomments" WHERE "itemcomments"."item_id" = ?[0m  [["item_id", 3]]
+  Rendered items/show.html.erb within layouts/application (42.6ms)
+  Rendered layouts/_navbar.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 1745ms (Views: 1537.3ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-28 10:45:30 +0200
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mItem Load (3.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pages/index.html.erb within layouts/application (104.8ms)
+  Rendered layouts/_navbar.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (1.9ms)
+Completed 200 OK in 644ms (Views: 632.8ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-28 10:46:37 +0200
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pages/index.html.erb within layouts/application (111.8ms)
+  Rendered layouts/_navbar.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 731ms (Views: 720.0ms | ActiveRecord: 3.0ms)
+
+

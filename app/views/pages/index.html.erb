@@ -27,8 +27,8 @@
 
   <span style="color: green;">Автор:<%= item.user.nickname %></span>
 
+  <span style="color: red;">| Раздел:<%= item.category.name%></span></p>
 
-  <span style="color: grey;">| Опубликовано: <%= item.created_at %></span></p>
 
   <% if current_user != nil and current_user.id == item.user_id %></p>
 
@@ -39,7 +39,7 @@
   <%= link_to "Удалить", item_path(item.id), class: "btn btn-primary active", data: {confirm: 'Are you sure?'}, method: :delete %>
  </span></p>
        </center>
-      >
+      
    
   <%end%>
 </div>
